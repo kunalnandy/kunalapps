@@ -25,19 +25,19 @@ app.set('trust proxy', true);
 
 app.use(express.static(path.resolve(__dirname, 'client', 'assets')));
 app.get('/', rateLimit(), (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'index.html'));
 });
 app.get('/about', rateLimit(), (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'about.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'about.html'));
 });
 app.get('/clippings', rateLimit(), (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'clippings.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'clippings.html'));
 });
 app.get('/contact', rateLimit(), (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'contact.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'contact.html'));
 });
 app.get('/gallery', rateLimit(), (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'gallery.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'gallery.html'));
 });
 
 app.use(bodyParser.json());
