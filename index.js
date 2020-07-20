@@ -23,20 +23,20 @@ const app = express();
 
 app.set('trust proxy', true);
 
-app.use(express.static(path.resolve(__dirname, 'client', 'assets')));
+app.use( '/assets' ,express.static(path.resolve(__dirname, 'client', 'assets')));
 app.get('/', rateLimit(), (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'index.html'));
 });
-app.get('/about', rateLimit(), (req, res) => {
+app.get('/about.html', rateLimit(), (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'about.html'));
 });
-app.get('/clippings', rateLimit(), (req, res) => {
+app.get('/clippings.html', rateLimit(), (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'clippings.html'));
 });
-app.get('/contact', rateLimit(), (req, res) => {
+app.get('/contact.html', rateLimit(), (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'contact.html'));
 });
-app.get('/gallery', rateLimit(), (req, res) => {
+app.get('/gallery.html', rateLimit(), (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'gallery.html'));
 });
 
