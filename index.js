@@ -27,6 +27,9 @@ app.use( '/assets' ,express.static(path.resolve(__dirname, 'client', 'assets')))
 app.get('/', rateLimit(), (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'index.html'));
 });
+app.get('/index.html', rateLimit(), (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'index.html'));
+});
 app.get('/about.html', rateLimit(), (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'about.html'));
 });
